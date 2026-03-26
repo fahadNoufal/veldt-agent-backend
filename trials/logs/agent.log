@@ -1,0 +1,88 @@
+2026-03-26 14:57:26 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-26 15:01:00 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='Hi there'
+2026-03-26 15:01:00 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-26 15:01:19 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Hi there! To help me find the perfect dress for you, could you tell me a bit about the occasion and what kind of style you're going for?"
+}
+2026-03-26 15:01:19 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-26 15:13:30 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='i need a dress for my brothers bday party, its at night, i need classic syle relaxed fit dress.'
+2026-03-26 15:13:30 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-26 15:13:41 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Happy birthday to your brother! To help me find the perfect dress, could you tell me if you prefer a more casual or a more dressed-up vibe for the party?"
+}
+2026-03-26 15:13:41 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-26 15:15:27 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=2  message='casual vibe'
+2026-03-26 15:15:27 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-26 15:15:32 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "A relaxed-fit, midi-length A-line dress in a breathable cotton-linen blend with subtle vertical stripes would be perfect for a casual, classic evening celebr
+2026-03-26 15:15:32 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-03-26 16:07:54 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:07:58 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:08:31 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:08:34 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:09:10 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:09:13 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:13:24 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:13:29 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:14:02 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:14:06 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:17:01 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:17:05 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:20:05 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:20:08 | ERROR    | agents.search_agent | [SearchAgent] FAISS index not found at 'product_index.faiss   # CLIP product FAISS index'
+2026-03-26 16:20:37 | INFO     | agents.search_agent | [SearchAgent] Loading CLIP model on device=cpu
+2026-03-26 16:20:41 | INFO     | agents.search_agent | [SearchAgent] FAISS index loaded — 1000 products indexed
+2026-03-26 16:20:41 | DEBUG    | agents.search_agent | [SearchAgent] Encoding query: 'white dress'  top_k=5
+2026-03-26 16:20:41 | INFO     | agents.search_agent | [SearchAgent] Search done — query='white dress'  results=['0405', '0653', '0361', '0425', '0023']
+2026-03-26 16:21:53 | INFO     | datasets | PyTorch version 2.8.0 available.
+2026-03-26 16:23:35 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=5
+2026-03-26 16:23:35 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:23:35 | INFO     | agents.rag_agent | [RAGAgent] Loaded 0 chunks from ./company-data
+2026-03-26 16:23:35 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:23:35 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:23:40 | INFO     | agents.rag_agent | [RAGAgent] Building new FAISS vector store…
+2026-03-26 16:23:56 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=3
+2026-03-26 16:23:56 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:23:56 | INFO     | agents.rag_agent | [RAGAgent] Loaded 0 chunks from ./company-data
+2026-03-26 16:23:56 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:23:56 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:24:01 | INFO     | agents.rag_agent | [RAGAgent] Building new FAISS vector store…
+2026-03-26 16:31:48 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=3
+2026-03-26 16:31:48 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:31:48 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:31:48 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:31:52 | INFO     | agents.rag_agent | [RAGAgent] Loading FAISS vector store from disk: ./faiss_vector_store_index
+2026-03-26 16:31:52 | INFO     | agents.rag_agent | [RAGAgent] Loading BM25 index from disk: ./bm25.pkl
+2026-03-26 16:32:27 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=3
+2026-03-26 16:32:27 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:32:27 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:32:27 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:32:32 | INFO     | agents.rag_agent | [RAGAgent] Loading FAISS vector store from disk: ./faiss_vector_store_index
+2026-03-26 16:32:32 | INFO     | agents.rag_agent | [RAGAgent] Loading BM25 index from disk: ./bm25.pkl
+2026-03-26 16:35:25 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=3
+2026-03-26 16:35:25 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:35:25 | INFO     | agents.rag_agent | [RAGAgent] Loaded 0 chunks from ./company-data
+2026-03-26 16:35:25 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:35:25 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:35:30 | INFO     | agents.rag_agent | [RAGAgent] Loading FAISS vector store from disk: ./faiss_vector_store_index
+2026-03-26 16:35:30 | INFO     | agents.rag_agent | [RAGAgent] Building new BM25 index…
+2026-03-26 16:37:33 | INFO     | agents.rag_agent | [RAGAgent] query='whats if the quality check fails'  top_k=3
+2026-03-26 16:37:33 | INFO     | agents.rag_agent | [RAGAgent] Initializing…
+2026-03-26 16:37:33 | INFO     | agents.rag_agent | [RAGAgent] Loaded 0 chunks from ./company-data
+2026-03-26 16:37:33 | INFO     | sentence_transformers.SentenceTransformer | Use pytorch device_name: cpu
+2026-03-26 16:37:33 | INFO     | sentence_transformers.SentenceTransformer | Load pretrained SentenceTransformer: BAAI/bge-small-en-v1.5
+2026-03-26 16:37:38 | INFO     | agents.rag_agent | [RAGAgent] Loading FAISS vector store from disk: ./faiss_vector_store_index
+2026-03-26 16:37:38 | INFO     | agents.rag_agent | [RAGAgent] Building new BM25 index…
+2026-03-26 16:52:57 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-26 16:53:53 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0361'}
+2026-03-26 16:53:53 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0361
+2026-03-26 16:53:54 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 3, 'quantity': 1}
+2026-03-26 16:53:54 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 3, "quantity": 1}
+2026-03-26 16:53:54 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0425'}
+2026-03-26 16:53:54 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0425
+2026-03-26 16:53:54 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 4, 'quantity': 1}
+2026-03-26 16:53:54 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 4, "quantity": 1}
+2026-03-26 16:53:55 | INFO     | agents.cart_agent | [CartAgent] Final reply (46 chars): "I've added the 3rd and 4th items to your cart."

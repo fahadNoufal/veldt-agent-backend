@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Elara — Your AI Stylist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Variables ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ivory:      #FAF7F2;
+      --cream:      #F2EDE6;
+      --blush:      #EDD5C8;
+      --rose:       #C4956A;
+      --rose-deep:  #9E6E4A;
+      --charcoal:   #1C1714;
+      --charcoal-m: #3D342E;
+      --muted:      #8C7B72;
+      --border:     #E2D8D0;
+      --user-bg:    #2D211A;
+      --user-text:  #FAF7F2;
+      --card-bg:    #FFFFFF;
+      --shadow:     0 4px 24px rgba(28,23,20,.10);
+      --shadow-sm:  0 2px 8px  rgba(28,23,20,.07);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--ivory);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--charcoal);
+      overflow: hidden;
+    }
+
+    /* ── Layout ────────────────────────────────────────── */
+    .shell {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ── Header ────────────────────────────────────────── */
+    header {
+      padding: 20px 28px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--ivory);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo-mark {
+      width: 38px; height: 38px;
+      background: var(--charcoal);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { width: 18px; height: 18px; fill: var(--ivory); }
+
+    .header-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: .08em;
+      line-height: 1;
+    }
+
+    .header-text p {
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .status-pill {
+      margin-left: auto;
+      display: flex; align-items: center; gap: 6px;
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #7BC67E;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: .4; }
+    }
+
+    /* ── Messages Area ──────────────────────────────────── */
+    #messages {
+      overflow-y: auto;
+      padding: 28px 28px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      scroll-behavior: smooth;
+    }
+
+    #messages::-webkit-scrollbar { width: 4px; }
+    #messages::-webkit-scrollbar-track { background: transparent; }
+    #messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    /* ── Bubbles ─────────────────────────────────────────── */
+    .msg {
+      display: flex;
+      gap: 10px;
+      animation: fadeUp .3s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.user { flex-direction: row-reverse; }
+
+    .avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      margin-top: 2px;
+    }
+
+    .avatar.ai  { background: var(--charcoal); color: var(--ivory); }
+    .avatar.usr { background: var(--blush);    color: var(--charcoal-m); }
+
+    .bubble {
+      max-width: 70%;
+      padding: 13px 17px;
+      border-radius: 18px;
+      line-height: 1.6;
+      font-size: .9rem;
+    }
+
+    .msg.ai   .bubble {
+      background: white;
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+      box-shadow: var(--shadow-sm);
+      color: var(--charcoal-m);
+    }
+
+    .msg.user .bubble {
+      background: var(--user-bg);
+      color: var(--user-text);
+      border-bottom-right-radius: 4px;
+    }
+
+    /* ── Status Indicator ───────────────────────────────── */
+    .status-msg {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .8rem;
+      color: var(--muted);
+      font-style: italic;
+      padding-left: 42px;
+      animation: fadeUp .2s ease both;
+    }
+
+    .dots span {
+      display: inline-block;
+      width: 4px; height: 4px;
+      background: var(--rose);
+      border-radius: 50%;
+      margin: 0 1px;
+      animation: bounce .9s ease-in-out infinite;
+    }
+    .dots span:nth-child(2) { animation-delay: .15s; }
+    .dots span:nth-child(3) { animation-delay: .30s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: translateY(0); }
+      40%            { transform: translateY(-5px); }
+    }
+
+    /* ── Product Grid ────────────────────────────────────── */
+    .products-block {
+      padding-left: 42px;
+      animation: fadeUp .35s ease both;
+    }
+
+    .products-label {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .products-grid {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .products-grid::-webkit-scrollbar { height: 3px; }
+    .products-grid::-webkit-scrollbar-thumb { background: var(--border); }
+
+    .product-card {
+      flex-shrink: 0;
+      width: 130px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      background: var(--cream);
+    }
+
+    .product-card .card-label {
+      padding: 7px 9px;
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .product-card .card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      color: var(--charcoal);
+      display: block;
+    }
+
+    /* ── Welcome ────────────────────────────────────────── */
+    .welcome {
+      text-align: center;
+      padding: 48px 24px;
+      animation: fadeUp .5s ease both;
+    }
+
+    .welcome-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .welcome h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+
+    .welcome p {
+      font-size: .88rem;
+      color: var(--muted);
+      max-width: 380px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .quick-starters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .starter-chip {
+      padding: 9px 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      font-size: .82rem;
+      color: var(--charcoal-m);
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .starter-chip:hover {
+      background: var(--charcoal);
+      color: var(--ivory);
+      border-color: var(--charcoal);
+    }
+
+    /* ── Input Bar ──────────────────────────────────────── */
+    .input-bar {
+      padding: 16px 20px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--ivory);
+    }
+
+    .input-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      padding: 10px 10px 10px 18px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .input-wrap:focus-within {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(196,149,106,.12);
+    }
+
+    #chat-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      background: transparent;
+      color: var(--charcoal);
+      resize: none;
+      max-height: 120px;
+      line-height: 1.5;
+    }
+
+    #chat-input::placeholder { color: var(--muted); }
+
+    #send-btn {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      border: none;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s, transform .15s;
+    }
+
+    #send-btn:hover  { background: var(--rose-deep); }
+    #send-btn:active { transform: scale(.92); }
+    #send-btn:disabled { background: var(--border); cursor: not-allowed; }
+
+    #send-btn svg { width: 16px; height: 16px; fill: white; }
+
+    .hint {
+      text-align: center;
+      font-size: .7rem;
+      color: var(--muted);
+      margin-top: 8px;
+      letter-spacing: .04em;
+    }
+
+    /* ── Divider ─────────────────────────────────────────── */
+    .day-divider {
+      text-align: center;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      position: relative;
+    }
+
+    .day-divider::before, .day-divider::after {
+      content: '';
+      position: absolute;
+      top: 50%; width: 30%;
+      height: 1px; background: var(--border);
+    }
+    .day-divider::before { left: 0; }
+    .day-divider::after  { right: 0; }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (max-width: 600px) {
+      #messages { padding: 16px 14px 8px; }
+      .input-bar { padding: 12px 14px 16px; }
+      .bubble { max-width: 85%; font-size: .85rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C8 2 5 6 5 9c0 2 1 4 2.5 5.5L6 20h12l-1.5-5.5C18 13 19 11 19 9c0-3-3-7-7-7z"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Maison Elara</h1>
+      <p>Your Personal AI Stylist</p>
+    </div>
+    <div class="status-pill">
+      <div class="status-dot" id="conn-dot"></div>
+      <span id="conn-label">Connecting…</span>
+    </div>
+  </header>
+
+  <!-- ── Messages ── -->
+  <div id="messages">
+    <div class="welcome" id="welcome-screen">
+      <div class="welcome-icon">✦</div>
+      <h2>Find Your Perfect Dress</h2>
+      <p>Tell me about your occasion, and I'll curate a selection just for you — from our handpicked collection.</p>
+      <div class="quick-starters">
+        <button class="starter-chip" onclick="sendQuick(this)">I have a wedding to attend</button>
+        <button class="starter-chip" onclick="sendQuick(this)">Looking for something for a night out</button>
+        <button class="starter-chip" onclick="sendQuick(this)">College reunion this weekend</button>
+        <button class="starter-chip" onclick="sendQuick(this)">What's your return policy?</button>
+        <button class="starter-chip" onclick="sendQuick(this)">View my cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Input ── -->
+  <div class="input-bar">
+    <div class="input-wrap">
+      <textarea
+        id="chat-input"
+        rows="1"
+        placeholder="Tell me about the occasion…"
+      ></textarea>
+      <button id="send-btn" onclick="sendMessage()" title="Send">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+    <p class="hint">Press Enter to send · Shift+Enter for new line</p>
+  </div>
+
+</div>
+
+<script>
+  // ── WebSocket Setup ────────────────────────────────────────
+  const WS_URL = `ws://${location.host}/ws`;
+  let ws       = null;
+  let thinking = null;   // current status element
+  let awaitingReply = false;
+
+  function connect() {
+    ws = new WebSocket(WS_URL);
+
+    ws.onopen = () => {
+      setStatus(true);
+      console.log('[WS] Connected');
+    };
+
+    ws.onclose = () => {
+      setStatus(false);
+      setTimeout(connect, 3000);  // auto-reconnect
+    };
+
+    ws.onerror = (e) => {
+      console.error('[WS] Error', e);
+      setStatus(false);
+    };
+
+    ws.onmessage = (e) => {
+      const event = JSON.parse(e.data);
+      handleEvent(event);
+    };
+  }
+
+  connect();
+
+  // ── Connection status ──────────────────────────────────────
+  function setStatus(online) {
+    const dot   = document.getElementById('conn-dot');
+    const label = document.getElementById('conn-label');
+    dot.style.background = online ? '#7BC67E' : '#E07070';
+    label.textContent    = online ? 'Online' : 'Reconnecting…';
+  }
+
+  // ── Event Router ───────────────────────────────────────────
+  function handleEvent(event) {
+    removeThinking();
+
+    switch (event.type) {
+      case 'status':
+        showThinking(event.content);
+        break;
+
+      case 'products':
+        renderProducts(event.ids, event.image_urls, event.message);
+        break;
+
+      case 'message':
+        renderAIMessage(event.content);
+        awaitingReply = false;
+        enableInput();
+        break;
+
+      case 'error':
+        renderAIMessage(`⚠️ ${event.content}`);
+        awaitingReply = false;
+        enableInput();
+        break;
+
+      default:
+        console.warn('[WS] Unknown event type:', event.type);
+    }
+
+    scrollToBottom();
+  }
+
+  // ── Render: Status ("Thinking…") ──────────────────────────
+  function showThinking(text) {
+    removeThinking();
+    const el = document.createElement('div');
+    el.className = 'status-msg';
+    el.id        = 'thinking';
+    el.innerHTML = `
+      <div class="dots"><span></span><span></span><span></span></div>
+      <span>${text}</span>
+    `;
+    getMessages().appendChild(el);
+    scrollToBottom();
+    thinking = el;
+  }
+
+  function removeThinking() {
+    const el = document.getElementById('thinking');
+    if (el) el.remove();
+    thinking = null;
+  }
+
+  // ── Render: AI Message ────────────────────────────────────
+  function renderAIMessage(text) {
+    removeWelcome();
+    const msg = document.createElement('div');
+    msg.className = 'msg ai';
+    msg.innerHTML = `
+      <div class="avatar ai">ME</div>
+      <div class="bubble">${formatText(text)}</div>
+    `;
+    getMessages().appendChild(msg);
+  }
+
+  // ── Render: User Message ──────────────────────────────────
+  function renderUserMessage(text) {
+    removeWelcome();
+    const msg = document.createElement('div');
+    msg.className = 'msg user';
+    msg.innerHTML = `
+      <div class="avatar usr">You</div>
+      <div class="bubble">${escHtml(text)}</div>
+    `;
+    getMessages().appendChild(msg);
+  }
+
+  // ── Render: Product Cards ─────────────────────────────────
+  function renderProducts(ids, imageUrls, message) {
+    if (!ids || ids.length === 0) return;
+
+    const block = document.createElement('div');
+    block.className = 'products-block';
+
+    const label = document.createElement('div');
+    label.className = 'products-label';
+    label.textContent = `✦  ${ids.length} Styles Found`;
+    block.appendChild(label);
+
+    const grid = document.createElement('div');
+    grid.className = 'products-grid';
+
+    const ordinals = ['1st','2nd','3rd','4th','5th','6th','7th','8th'];
+
+    ids.forEach((id, i) => {
+      const imgUrl = imageUrls && imageUrls[i] ? imageUrls[i] : `/images/img_${id}.png`;
+      const card   = document.createElement('div');
+      card.className = 'product-card';
+      card.title     = `Click to add ${ordinals[i] || (i+1+'th')} item to cart`;
+      card.onclick   = () => quickAddToCart(ordinals[i] || `${i+1}th`);
+      card.innerHTML = `
+        <img src="${escAttr(imgUrl)}"
+             alt="Product ${escHtml(id)}"
+             onerror="this.style.background='#EDD5C8';this.removeAttribute('src')" />
+        <div class="card-label">
+          <span class="card-num">${escHtml(ordinals[i] || (i+1+'th'))}</span>
+          #${escHtml(id)}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    block.appendChild(grid);
+    getMessages().appendChild(block);
+  }
+
+  // ── Send Message ──────────────────────────────────────────
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const text  = input.value.trim();
+    if (!text || awaitingReply || !ws || ws.readyState !== WebSocket.OPEN) return;
+
+    renderUserMessage(text);
+    input.value = '';
+    input.style.height = 'auto';
+    disableInput();
+    awaitingReply = true;
+
+    ws.send(JSON.stringify({ message: text }));
+    scrollToBottom();
+  }
+
+  function quickAddToCart(ordinal) {
+    const input = document.getElementById('chat-input');
+    input.value = `Add the ${ordinal} item to my cart`;
+    sendMessage();
+  }
+
+  function sendQuick(btn) {
+    const input = document.getElementById('chat-input');
+    input.value = btn.textContent;
+    sendMessage();
+  }
+
+  // ── Input helpers ──────────────────────────────────────────
+  function disableInput() {
+    document.getElementById('chat-input').disabled = true;
+    document.getElementById('send-btn').disabled   = true;
+  }
+
+  function enableInput() {
+    const input = document.getElementById('chat-input');
+    input.disabled = false;
+    document.getElementById('send-btn').disabled = false;
+    input.focus();
+  }
+
+  // ── Keyboard ───────────────────────────────────────────────
+  document.getElementById('chat-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+
+  // ── Auto-resize textarea ───────────────────────────────────
+  document.getElementById('chat-input').addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+  });
+
+  // ── Utilities ──────────────────────────────────────────────
+  function getMessages() { return document.getElementById('messages'); }
+
+  function scrollToBottom() {
+    const el = getMessages();
+    el.scrollTop = el.scrollHeight;
+  }
+
+  function removeWelcome() {
+    const w = document.getElementById('welcome-screen');
+    if (w) w.remove();
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function escAttr(str) {
+    return String(str).replace(/"/g,'&quot;');
+  }
+
+  function formatText(text) {
+    // Basic markdown-lite: **bold**, *italic*, newlines
+    return escHtml(text)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+  }
+</script>
+</body>
+</html>

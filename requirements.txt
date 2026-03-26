@@ -1,0 +1,27 @@
+# Core
+fastapi
+uvicorn[standard]
+websockets
+python-dotenv
+httpx
+
+# LangChain / LangGraph
+langchain
+langchain-core
+langchain-google-genai
+langchain-community
+langchain-text-splitters
+langgraph
+
+# Embeddings & Retrieval
+faiss-cpu
+rank-bm25
+sentence-transformers
+
+# CLIP / Vision
+torch>=2.0.0
+transformers
+Pillow
+
+# ML Utilities
+numpy

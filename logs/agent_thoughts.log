@@ -1,0 +1,12 @@
+2026-03-26 18:19:48
+[session=s0002]
+USER   : Looking for something for a night out
+RAW    : ["<ctrl42>", "call\nprint(default_api.ask_stylist(user_message='Looking for something for a night out'))"]
+CLEAN  : ["<ctrl42>", "call\nprint(default_api.ask_stylist(user_message='Looking for something for a night out'))"]
+────────────────────────────────────────────────────────────
+2026-03-26 18:33:26
+[session=s0002]
+USER   : Looking for something for a night out
+RAW    : [{"type": "text", "text": "Of course! To help find the perfect dress for your night out, could you tell me a little more about the style you're envisioning? Are you leaning towards something chic and sophisticated, or perhaps more fun and flirty?", "extras": {"signature": "CsUDAb4+9vujYYCgOsKqNkFFcMUUbrw1JLfVWISR7fq52yrBa+v/g8ZRs3qAbSpgPIr9e4dQfFhvBuqWUs/ZLuVxSkZNTtsFvSlma0bxXkFlXm2TdRSWGkfabjqivctg8csD7RKtt+OMSYXB9PcX//JIAlDE2eD17lW1vcwPcHfwKgkz7rnCRSA82tHu5QIZeUL7bxiZ9p8SKC7qpPtu7hHJ12hFHimOo/Kf/vyEn3KSxaUvp6j6c7f79B9xwf5I7tNLfZQ4qSa7FZ8meR3GAnT0+aVvD30uZhgT9LkuUPPhNCzOJINC1IFQ5+G5yJ23IDEkuCK8Y2YsrDRVsiQYMmbYBT2lsJqLxQZJNa3iBaPeTC7DSnkJ+db/0NJT/UUTSvso4F/J7zCk3wnmoD03i++D3VTwth/07qAy3GgRN1muWTK+eMoOWNCuJ6G8JGufIRLABmxgMRmcfIE1vv783KQNLV0cvmhUv3mGQmKrE+y8nezu/xV4uj7BS35+efW2ayZNEZUcrwiiwVtmsmy+YuEWECQu0VU5GW14LbOx6xsAxZFkP4hwkHa/3Cj/rXa2Gphzvy9ceGpr6a+H6NP8yQYOmLzqigfA"}}]
+CLEAN  : [{"type": "text", "text": "Of course! To help find the perfect dress for your night out, could you tell me a little more about the style you're envisioning? Are you leaning towards something chic and sophisticated, or perhaps more fun and flirty?", "extras": {"signature": "CsUDAb4+9vujYYCgOsKqNkFFcMUUbrw1JLfVWISR7fq52yrBa+v/g8ZRs3qAbSpgPIr9e4dQfFhvBuqWUs/ZLuVxSkZNTtsFvSlma0bxXkFlXm2TdRSWGkfabjqivctg8csD7RKtt+OMSYXB9PcX//JIAlDE2eD17lW1vcwPcHfwKgkz7rnCRSA82tHu5QIZeUL7bxiZ9p8SKC7qpPtu7hHJ12hFHimOo/Kf/vyEn3KSxaUvp6j6c7f79B9xwf5I7tNLfZQ4qSa7FZ8meR3GAnT0+aVvD30uZhgT9LkuUPPhNCzOJINC1IFQ5+G5yJ23IDEkuCK8Y2YsrDRVsiQYMmbYBT2lsJqLxQZJNa3iBaPeTC7DSnkJ+db/0NJT/UUTSvso4F/J7zCk3wnmoD03i++D3VTwth/07qAy3GgRN1muWTK+eMoOWNCuJ6G8JGufIRLABmxgMRmcfIE1vv783KQNLV0cvmhUv3mGQmKrE+y8nezu/xV4uj7BS35+efW2ayZNEZUcrwiiwVtmsmy+YuEWECQu0VU5GW14LbOx6xsAxZFkP4hwkHa/3Cj/rXa2Gphzvy9ceGpr6a+H6NP8yQYOmLzqigfA"}}]
+────────────────────────────────────────────────────────────
