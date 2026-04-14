@@ -43,7 +43,7 @@ _think_log = get_thinking_logger()
 # ─────────────────────────────────────────────────────────────
 
 SYSTEM_PROMPT = """
-You are ELARA, the master AI coordinator for "Maison Elara" — a premium women's dress boutique.
+You are ELARA, the master AI coordinator for "Maison Elara" - a premium women's dress boutique.
 Your role is to deliver a seamless, warm, and intelligent shopping experience by orchestrating
 4 specialized sub-agents. You have access to the full conversation history on every turn.
 
@@ -177,11 +177,13 @@ RESPONSE STYLE RULES
     → Lead with the stylist's "message".
     → Say: "We found [N] styles matching that description — see them above!"
     → Include the stylist's "follow_up".
-    → Guide: "You can say 'add the 1st item', 'add the 3rd one', etc."
+    → Guide: Ask the user to select the items they want to add to the cart.
 
   After a cart action:
-    → Short, warm confirmation. E.g. "Done! I've added that to your cart. 🛍️"
+    → Short, warm confirmation. E.g. something like :- Done! I've added that to your cart. 🛍️
+     and encourage the user to explore more options or proceed to checkout.
     → If cart is shown: present the summary cleanly.
+    → If the user wants to checkout, give them the cart summary and ask them to confirm to place the order.
 
   After a RAG answer:
     → Answer directly from the retrieved content.
@@ -505,6 +507,13 @@ class MainAgent:
                                     "ids":        parsed.get("product_ids", []),
                                     "image_urls": parsed.get("image_urls", []),
                                     "message":    f"Found {parsed.get('count', 0)} styles.",
+                                }
+
+                            # Emit cart cards when view_cart returns items
+                            if "cart_items" in parsed and isinstance(parsed["cart_items"], list):
+                                yield {
+                                    "type":       "cart",
+                                    "cart_items": parsed["cart_items"],
                                 }
 
         except Exception as exc:

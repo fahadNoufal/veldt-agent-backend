@@ -1,0 +1,45 @@
+# ── Python & Environments ─────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+# Prevent local build artifacts from interfering
+build/
+dist/
+
+# ── Dev / Editor / Logs ────────────────────────────────────────
+.git/
+.gitignore
+.env
+.env.*
+.vscode/
+.idea/
+*.md
+*.log
+logs/
+.DS_Store
+
+# ── AI/ML Artifacts (Crucial) ─────────────────────────────────
+# Ignore raw data that hasn't been processed into the DB/FAISS
+raw_data/
+training_data/
+# Ignore the HuggingFace cache if it exists locally 
+# (We download fresh, optimized versions during the Docker build)
+.cache/
+model_cache/
+
+# ── Frontend (If in the same repo) ──────────────────────────
+node_modules/
+react-frontend/node_modules/
+react-frontend/.next/
+react-frontend/out/
+react-frontend/dist/
+
+# ── Jupyter & Testing ───────────────────────────────────────────
+*.ipynb
+.ipynb_checkpoints/
+.pytest_cache/
+.tox/

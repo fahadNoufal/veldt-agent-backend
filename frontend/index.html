@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -258,6 +259,73 @@
       display: block;
     }
 
+    /* ── Cart Items Grid ─────────────────────────────────── */
+    .cart-block {
+      padding-left: 42px;
+      animation: fadeUp .35s ease both;
+    }
+
+    .cart-label {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .cart-grid {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .cart-grid::-webkit-scrollbar { height: 3px; }
+    .cart-grid::-webkit-scrollbar-thumb { background: var(--border); }
+
+    .cart-card {
+      flex-shrink: 0;
+      width: 150px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      padding: 14px 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cart-card .cart-item-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--charcoal);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .cart-card .cart-item-qty {
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .cart-card .cart-item-price {
+      font-size: .82rem;
+      color: var(--rose-deep);
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    .cart-total-row {
+      padding-left: 42px;
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .cart-total-row strong { color: var(--charcoal); }
+
     /* ── Welcome ────────────────────────────────────────── */
     .welcome {
       text-align: center;
@@ -511,6 +579,10 @@
         renderProducts(event.ids, event.image_urls, event.message);
         break;
 
+      case 'cart':
+        renderCartItems(event.cart_items);
+        break;
+
       case 'message':
         renderAIMessage(event.content);
         awaitingReply = false;
@@ -573,6 +645,54 @@
       <div class="bubble">${escHtml(text)}</div>
     `;
     getMessages().appendChild(msg);
+  }
+
+  // ── Render: Cart Items ────────────────────────────────────
+  function renderCartItems(items) {
+    if (!items || items.length === 0) return;
+
+    const block = document.createElement('div');
+    block.className = 'products-block';   // reuse same product grid styles
+
+    const label = document.createElement('div');
+    label.className = 'products-label';
+    label.textContent = `🛒  Your Cart — ${items.length} item${items.length !== 1 ? 's' : ''}`;
+    block.appendChild(label);
+
+    const grid = document.createElement('div');
+    grid.className = 'products-grid';
+
+    let total = 0;
+    items.forEach(item => {
+      const imgUrl = item.image_path
+        ? `/${item.image_path}`
+        : (item.product_id ? `/images/img_${item.product_id}.png` : '');
+      const subtotal = item.subtotal || (parseFloat(item.price || 0) * parseInt(item.quantity || 1));
+      total += subtotal;
+
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${escAttr(imgUrl)}"
+             alt="${escAttr(item.name || 'Cart item')}"
+             onerror="this.style.background='#EDD5C8';this.removeAttribute('src')" />
+        <div class="card-label">
+          <span class="card-num">${escHtml(item.name || 'Item')}</span>
+          ${item.brand ? escHtml(item.brand) + ' · ' : ''}₹${escHtml(String(item.price || ''))}
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    block.appendChild(grid);
+    getMessages().appendChild(block);
+
+    if (total > 0) {
+      const totalEl = document.createElement('div');
+      totalEl.className = 'cart-total-row';
+      totalEl.innerHTML = `Total: <strong>₹${escHtml(String(total))}</strong>`;
+      getMessages().appendChild(totalEl);
+    }
   }
 
   // ── Render: Product Cards ─────────────────────────────────

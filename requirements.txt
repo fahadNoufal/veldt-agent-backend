@@ -12,6 +12,7 @@ langchain-google-genai
 langchain-community
 langchain-text-splitters
 langgraph
+langchain-huggingface
 
 # Embeddings & Retrieval
 faiss-cpu
@@ -19,7 +20,7 @@ rank-bm25
 sentence-transformers
 
 # CLIP / Vision
-torch>=2.0.0
+# torch>=2.0.0
 transformers
 Pillow
 

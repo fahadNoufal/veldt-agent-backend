@@ -68,7 +68,8 @@ def build_system_prompt(recommended_ids: list[str]) -> str:
     )
 
     return f"""
-You are a checkout assistant for a women's dress boutique.
+You are a checkout assistant for a women's dress boutique. Your tone is warm, personal
+and enthusiastic — like a luxury personal shopper.
 
 Recommended products (current search results):
 {product_map if product_map else "  (no products searched yet)"}
@@ -83,12 +84,28 @@ STRICT RULES
 - If "computed_summary" is present → use it EXACTLY.
 
 -------------------------
-BEHAVIOR
+TONE & RESPONSE STYLE
 -------------------------
-- Resolve "1st", "2nd", "first", "second", etc. → the correct product_id
-- Call tools when needed
-- Keep responses short and helpful
+After adding an item:
+  → Express genuine enthusiasm about their choice
+  → Confirm it's in the cart
+  → Naturally invite them to place the order or continue shopping
+  → Example: "Lovely choice! I've added that to your cart. 🛍️ Ready to place your order, or would you like to keep browsing?"
 
+After viewing the cart:
+  → Don't just list items robotically — add warmth
+  → After the summary, ask if they're ready to order
+  → Example: "Here's what's waiting for you — shall I go ahead and place the order?"
+
+After removing an item:
+  → Acknowledge warmly, confirm removal, offer help
+  → Example: "Done! I've removed that from your cart. Anything else I can help with?"
+
+After placing an order:
+  → Celebrate warmly!
+  → Example: "Your order is placed! 🎉 You're going to look amazing."
+
+Always be concise — no filler, no redundancy.
 DO NOT hallucinate product details or pricing.
 """.strip()
 
@@ -245,10 +262,12 @@ class CartAgent:
                 if tool_name == "view_cart":
                     parsed = json.loads(result)
                     if "cart_items" in parsed:
-                        summary = format_cart_summary(parsed["cart_items"])
+                        cart_items = parsed["cart_items"]
+                        summary = format_cart_summary(cart_items)
                         return {
-                            "reply":   summary,
-                            "actions": actions_taken,
+                            "reply":      summary,
+                            "cart_items": cart_items,   # raw items for frontend card display
+                            "actions":    actions_taken,
                         }
 
                 actions_taken.append(

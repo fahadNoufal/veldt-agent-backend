@@ -1,0 +1,392 @@
+2026-03-29 16:21:36 | INFO     | server | [WS] User message: 'checkout'
+2026-03-29 16:21:38 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:21:40 | INFO     | agents.cart_agent | [CartAgent] Calling tool=view_cart  args={}
+2026-03-29 16:21:40 | INFO     | agents.cart_agent | [Cart] view_cart called
+2026-03-29 16:21:40 | DEBUG    | agents.cart_agent | [Cart] view_cart returned 1 items
+2026-03-29 16:21:40 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"cart_items": [{"cart_id": 1, "product_id": "0461", "quantity": 1, "name": "Knit Dress", "brand": "Nomi Studio", "price": 9999.0, "image_path": "images/img_0461.png", "subtotal": 9999.0, "added_at": 
+2026-03-29 16:21:40 | DEBUG    | server | [WS] Sending event type=cart
+2026-03-29 16:21:42 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:21:47 | INFO     | server | [WS] User message: 'whats in my cart'
+2026-03-29 16:21:49 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:21:49 | INFO     | agents.cart_agent | [CartAgent] Calling tool=view_cart  args={}
+2026-03-29 16:21:49 | INFO     | agents.cart_agent | [Cart] view_cart called
+2026-03-29 16:21:49 | DEBUG    | agents.cart_agent | [Cart] view_cart returned 1 items
+2026-03-29 16:21:49 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"cart_items": [{"cart_id": 1, "product_id": "0461", "quantity": 1, "name": "Knit Dress", "brand": "Nomi Studio", "price": 9999.0, "image_path": "images/img_0461.png", "subtotal": 9999.0, "added_at": 
+2026-03-29 16:21:49 | DEBUG    | server | [WS] Sending event type=cart
+2026-03-29 16:21:51 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:27:06 | INFO     | server | [WS] Session closed — client=127.0.0.1:38702
+2026-03-29 16:27:06 | INFO     | server | [WS] Session closed — client=127.0.0.1:38710
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | INFO     | server | [WS] New session opened — client=127.0.0.1:42382
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:28:56 | INFO     | server | [WS] New session opened — client=127.0.0.1:42386
+2026-03-29 16:28:56 | INFO     | server | [WS] Session closed — client=127.0.0.1:42382
+2026-03-29 16:30:42 | INFO     | server | [WS] Session closed — client=127.0.0.1:42386
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | INFO     | server | [WS] New session opened — client=127.0.0.1:42166
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:30:42 | INFO     | server | [WS] New session opened — client=127.0.0.1:42180
+2026-03-29 16:30:42 | INFO     | server | [WS] Session closed — client=127.0.0.1:42166
+2026-03-29 16:31:05 | INFO     | server | [WS] User message: 'I have a wedding to attend'
+2026-03-29 16:31:08 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:31:08 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='I have a wedding to attend'
+2026-03-29 16:31:08 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 16:31:09 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Oh, how exciting! Weddings are always so special. To help me find the perfect dress for you, could you tell me if it's a daytime or evening wedding, and what ki
+2026-03-29 16:31:09 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 16:31:11 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:32:02 | INFO     | server | [WS] User message: 'i dont want to be too flashy, i like to be simle'
+2026-03-29 16:32:03 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:32:03 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=2  message='i dont want to be too flashy, i like to be simle'
+2026-03-29 16:32:03 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 16:32:05 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Got it! Simplicity is elegant. Is this a daytime or evening wedding, and do you have any preferences on the dress length or fit?"
+}
+2026-03-29 16:32:05 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 16:32:06 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:32:25 | INFO     | server | [WS] User message: 'it scheduled at night'
+2026-03-29 16:32:28 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:32:28 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=4  message="I have a wedding to attend, it is scheduled at night. I don't want to be too flashy, I like to be simple."
+2026-03-29 16:32:28 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 16:32:29 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "Consider a sophisticated navy blue, sleeveless midi A-line dress in a crepe fabric with a subtle V-neckline.",
+  "message": "This choice offers understated e
+2026-03-29 16:32:29 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-03-29 16:32:31 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:32:31 | DEBUG    | agents.search_agent | [SearchAgent] Encoding query: 'Consider a sophisticated navy blue, sleeveless midi A-line dress in a crepe fabric with a subtle V-neckline.'  top_k=5
+2026-03-29 16:32:32 | INFO     | agents.search_agent | [SearchAgent] Search done — query='Consider a sophisticated navy blue, sleeveless midi A-line dress in a crepe fabric with a subtle V-neckline.'  results=['0688', '0985', '0053', '0691', '0689']
+2026-03-29 16:32:32 | DEBUG    | server | [WS] Sending event type=products
+2026-03-29 16:32:34 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:32:57 | INFO     | server | [WS] User message: 'i like something white'
+2026-03-29 16:32:59 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:32:59 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=6  message='i like something white'
+2026-03-29 16:32:59 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 16:33:01 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "White is a beautiful choice for a formal event! However, for a wedding, it's generally best to avoid white to let the bride shine. Would you be open to a differ
+2026-03-29 16:33:01 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 16:33:03 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:33:31 | INFO     | server | [WS] User message: 'no i am brides sister, i like to ware white'
+2026-03-29 16:33:34 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:33:34 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=8  message="I am the bride's sister and I want to wear a simple white dress for a nighttime wedding."
+2026-03-29 16:33:34 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 16:33:36 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "Opt for an elegant ivory, long-sleeved, floor-length sheath dress crafted from a luxurious satin with a modest boat neckline.",
+  "message": "This sophistica
+2026-03-29 16:33:36 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-03-29 16:33:37 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:33:37 | DEBUG    | agents.search_agent | [SearchAgent] Encoding query: 'Opt for an elegant ivory, long-sleeved, floor-length sheath dress crafted from a luxurious satin with a modest boat neckline.'  top_k=5
+2026-03-29 16:33:37 | INFO     | agents.search_agent | [SearchAgent] Search done — query='Opt for an elegant ivory, long-sleeved, floor-length sheath dress crafted from a luxurious satin with a modest boat neckline.'  results=['0425', '0117', '0738', '0017', '0335']
+2026-03-29 16:33:37 | DEBUG    | server | [WS] Sending event type=products
+2026-03-29 16:33:40 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:33:49 | INFO     | server | [WS] User message: 'Add the 1st item to my cart'
+2026-03-29 16:33:51 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:33:52 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0425'}
+2026-03-29 16:33:52 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0425
+2026-03-29 16:33:52 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 2, 'quantity': 1}
+2026-03-29 16:33:52 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 2, "quantity": 1}
+2026-03-29 16:33:53 | INFO     | agents.cart_agent | [CartAgent] Final reply (0 chars): ''
+2026-03-29 16:33:55 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:34:02 | INFO     | server | [WS] User message: 'Add the 3rd item to my cart'
+2026-03-29 16:34:04 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:34:04 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0738'}
+2026-03-29 16:34:04 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0738
+2026-03-29 16:34:04 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 3, 'quantity': 1}
+2026-03-29 16:34:04 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 3, "quantity": 1}
+2026-03-29 16:34:05 | INFO     | agents.cart_agent | [CartAgent] Final reply (140 chars): "That's a fabulous choice! I've popped the 3rd item into your cart. 🛍️ Are you ready to place your or"
+2026-03-29 16:34:07 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:34:19 | INFO     | server | [WS] User message: 'whats in my cart'
+2026-03-29 16:34:21 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:34:22 | INFO     | agents.cart_agent | [CartAgent] Calling tool=view_cart  args={}
+2026-03-29 16:34:22 | INFO     | agents.cart_agent | [Cart] view_cart called
+2026-03-29 16:34:22 | DEBUG    | agents.cart_agent | [Cart] view_cart returned 3 items
+2026-03-29 16:34:22 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"cart_items": [{"cart_id": 3, "product_id": "0738", "quantity": 1, "name": "Camera Bag", "brand": "Maeve Atelier", "price": 5999.0, "image_path": "images/img_0738.png", "subtotal": 5999.0, "added_at"
+2026-03-29 16:34:22 | DEBUG    | server | [WS] Sending event type=cart
+2026-03-29 16:34:24 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:34:44 | INFO     | server | [WS] User message: 'ya shure, lets proceed to checkout'
+2026-03-29 16:34:46 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 16:34:47 | INFO     | agents.cart_agent | [CartAgent] Calling tool=place_order  args={}
+2026-03-29 16:34:47 | INFO     | agents.cart_agent | [Cart] place_order called
+2026-03-29 16:34:47 | INFO     | agents.cart_agent | [Cart] place_order success: {'success': True, 'placed': ['0461', '0425', '0738'], 'count': 3}
+2026-03-29 16:34:47 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"success": true, "placed": ["0461", "0425", "0738"], "count": 3}
+2026-03-29 16:34:48 | INFO     | agents.cart_agent | [CartAgent] Final reply (53 chars): "Your order is placed! 🎉 You're going to look amazing."
+2026-03-29 16:34:50 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 16:48:02 | INFO     | server | [WS] Session closed — client=127.0.0.1:42180
+2026-03-29 16:48:08 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:08 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:08 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:09 | INFO     | server | [WS] New session opened — client=127.0.0.1:58962
+2026-03-29 16:48:09 | INFO     | server | [WS] Session closed — client=127.0.0.1:58962
+2026-03-29 16:48:10 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:10 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:10 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:11 | INFO     | server | [WS] New session opened — client=127.0.0.1:58976
+2026-03-29 16:48:11 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:11 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:11 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:48:11 | INFO     | server | [WS] New session opened — client=127.0.0.1:58990
+2026-03-29 16:48:11 | INFO     | server | [WS] Session closed — client=127.0.0.1:58976
+2026-03-29 16:50:38 | INFO     | server | [WS] Session closed — client=127.0.0.1:58990
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | INFO     | server | [WS] New session opened — client=127.0.0.1:35714
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:38 | INFO     | server | [WS] New session opened — client=127.0.0.1:35724
+2026-03-29 16:50:38 | INFO     | server | [WS] Session closed — client=127.0.0.1:35714
+2026-03-29 16:50:41 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:41 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:41 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:41 | INFO     | server | [WS] New session opened — client=127.0.0.1:35728
+2026-03-29 16:50:55 | INFO     | server | [WS] Session closed — client=127.0.0.1:35724
+2026-03-29 16:50:55 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:56 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:56 | INFO     | server | [WS] New session opened — client=127.0.0.1:44060
+2026-03-29 16:50:58 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:59 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:59 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 16:50:59 | INFO     | server | [WS] New session opened — client=127.0.0.1:44074
+2026-03-29 17:29:13 | INFO     | server | [WS] Session closed — client=127.0.0.1:44060
+2026-03-29 17:29:13 | INFO     | server | [WS] Session closed — client=127.0.0.1:44074
+2026-03-29 17:29:14 | INFO     | server | [WS] Session closed — client=127.0.0.1:35728
+2026-03-29 17:29:14 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | INFO     | server | [WS] New session opened — client=127.0.0.1:50308
+2026-03-29 17:29:15 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:15 | INFO     | server | [WS] New session opened — client=127.0.0.1:50322
+2026-03-29 17:29:15 | INFO     | server | [WS] Session closed — client=127.0.0.1:50308
+2026-03-29 17:29:20 | INFO     | server | [WS] User message: 'hi'
+2026-03-29 17:29:22 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:29:22 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='hi'
+2026-03-29 17:29:22 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:29:23 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Hi there! I'm excited to help you find the perfect dress. To start, could you tell me what the occasion is and what kind of style you're going for?"
+}
+2026-03-29 17:29:23 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 17:29:25 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:29:26 | INFO     | server | [WS] Session closed — client=127.0.0.1:50322
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | INFO     | server | [WS] New session opened — client=127.0.0.1:42482
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:27 | INFO     | server | [WS] New session opened — client=127.0.0.1:42498
+2026-03-29 17:29:27 | INFO     | server | [WS] Session closed — client=127.0.0.1:42482
+2026-03-29 17:29:32 | INFO     | server | [WS] User message: 'Looking for something for a night out'
+2026-03-29 17:29:34 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:29:34 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='Looking for something for a night out'
+2026-03-29 17:29:34 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:29:35 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Sounds exciting! To help me find the perfect dress, could you tell me a bit more about the vibe you're going for? Are you thinking of something more sleek and s
+2026-03-29 17:29:35 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | INFO     | server | [WS] New session opened — client=127.0.0.1:44606
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:29:36 | INFO     | server | [WS] New session opened — client=127.0.0.1:44612
+2026-03-29 17:29:36 | INFO     | server | [WS] Session closed — client=127.0.0.1:44606
+2026-03-29 17:29:37 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:29:37 | ERROR    | server | [WS] Agent error: 
+Traceback (most recent call last):
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 332, in asgi_send
+    await self.send(data)  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 86, in send
+    await self._send(message)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/_exception_handler.py", line 39, in sender
+    await send(message)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 345, in asgi_send
+    raise ClientDisconnected from exc
+uvicorn.protocols.utils.ClientDisconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fahad/programFiles/projects/ai-projects/ecommerse-support-agent/support-agent/server.py", line 102, in websocket_endpoint
+    await websocket.send_json(event)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 176, in send_json
+    await self.send({"type": "websocket.send", "text": text})
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 89, in send
+    raise WebSocketDisconnect(code=1006)
+starlette.websockets.WebSocketDisconnect
+2026-03-29 17:29:37 | ERROR    | server | [WS] Unexpected error: Cannot call "send" once a close message has been sent.
+Traceback (most recent call last):
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 332, in asgi_send
+    await self.send(data)  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 620, in send
+    await self.ensure_open()
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/websockets/legacy/protocol.py", line 921, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedOK: received 1001 (going away); then sent 1001 (going away)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 86, in send
+    await self._send(message)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/_exception_handler.py", line 39, in sender
+    await send(message)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 345, in asgi_send
+    raise ClientDisconnected from exc
+uvicorn.protocols.utils.ClientDisconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fahad/programFiles/projects/ai-projects/ecommerse-support-agent/support-agent/server.py", line 102, in websocket_endpoint
+    await websocket.send_json(event)
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 176, in send_json
+    await self.send({"type": "websocket.send", "text": text})
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 89, in send
+    raise WebSocketDisconnect(code=1006)
+starlette.websockets.WebSocketDisconnect
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fahad/programFiles/projects/ai-projects/ecommerse-support-agent/support-agent/server.py", line 105, in websocket_endpoint
+    await websocket.send_json({
+    ...<2 lines>...
+    })
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 176, in send_json
+    await self.send({"type": "websocket.send", "text": text})
+  File "/home/fahad/anaconda3/envs/ml-proj/lib/python3.13/site-packages/starlette/websockets.py", line 98, in send
+    raise RuntimeError('Cannot call "send" once a close message has been sent.')
+RuntimeError: Cannot call "send" once a close message has been sent.
+2026-03-29 17:30:39 | INFO     | server | [WS] User message: 'hi'
+2026-03-29 17:30:41 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:30:41 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='hi'
+2026-03-29 17:30:41 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:30:42 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "Hi there! I'm excited to help you find the perfect dress. To start, could you tell me a bit about the occasion you're shopping for?"
+}
+2026-03-29 17:30:42 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 17:30:44 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:31:48 | INFO     | server | [WS] User message: 'im looking dress for my girlfriend'
+2026-03-29 17:31:50 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:31:50 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=2  message='im looking dress for my girlfriend'
+2026-03-29 17:31:50 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:31:51 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "That's so thoughtful! To help me pick the perfect dress for her, could you tell me what the occasion is? And what kind of style does she usually like?"
+}
+2026-03-29 17:31:51 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 17:31:53 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:32:15 | INFO     | server | [WS] User message: 'birthday'
+2026-03-29 17:32:17 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:32:17 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=4  message='im looking dress for my girlfriend, for her birthday'
+2026-03-29 17:32:17 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:32:19 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "question",
+  "questions": "A birthday! That's wonderful. What time of day will the celebration be, and does she have any particular style preferences – like something elegant, casual, or 
+2026-03-29 17:32:19 | INFO     | agents.stylist_agent | [Stylist] parsed response type=question
+2026-03-29 17:32:20 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:33:06 | INFO     | server | [WS] User message: 'casual premium dress'
+2026-03-29 17:33:09 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:33:09 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=6  message='casual premium dress'
+2026-03-29 17:33:09 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:33:10 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "Consider a midi-length A-line dress in a soft, premium cotton blend, featuring a subtle V-neck and delicate puff sleeves in a sophisticated olive green hue."
+2026-03-29 17:33:10 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-03-29 17:33:12 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:33:12 | DEBUG    | agents.search_agent | [SearchAgent] Encoding query: 'Consider a midi-length A-line dress in a soft, premium cotton blend, featuring a subtle V-neck and delicate puff sleeves in a sophisticated olive green hue.'  top_k=5
+2026-03-29 17:33:13 | INFO     | agents.search_agent | [SearchAgent] Search done — query='Consider a midi-length A-line dress in a soft, premium cotton blend, featuring a subtle V-neck and delicate puff sleeves in a sophisticated olive green hue.'  results=['0017', '0903', '0667', '0572', '0129']
+2026-03-29 17:33:13 | DEBUG    | server | [WS] Sending event type=products
+2026-03-29 17:33:16 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:33:48 | INFO     | server | [WS] User message: 'i prefer white'
+2026-03-29 17:33:50 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:33:50 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=8  message='I prefer white casual premium dress'
+2026-03-29 17:33:50 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-03-29 17:33:52 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "A midi-length, relaxed-fit shirt dress in a crisp, premium linen-cotton blend, featuring a classic collar and subtle side slits, in a timeless optic white.",
+2026-03-29 17:33:52 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-03-29 17:33:54 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:33:54 | DEBUG    | agents.search_agent | [SearchAgent] Encoding query: 'A midi-length, relaxed-fit shirt dress in a crisp, premium linen-cotton blend, featuring a classic collar and subtle side slits, in a timeless optic white.'  top_k=5
+2026-03-29 17:33:54 | INFO     | agents.search_agent | [SearchAgent] Search done — query='A midi-length, relaxed-fit shirt dress in a crisp, premium linen-cotton blend, featuring a classic collar and subtle side slits, in a timeless optic white.'  results=['0194', '0632', '0335', '0340', '0667']
+2026-03-29 17:33:54 | DEBUG    | server | [WS] Sending event type=products
+2026-03-29 17:33:56 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:34:13 | INFO     | server | [WS] User message: 'i like first one'
+2026-03-29 17:34:16 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:34:17 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0194'}
+2026-03-29 17:34:17 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0194
+2026-03-29 17:34:17 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 1, 'quantity': 1}
+2026-03-29 17:34:17 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 1, "quantity": 1}
+2026-03-29 17:34:18 | INFO     | agents.cart_agent | [CartAgent] Final reply (110 chars): "Lovely choice! I've added that to your cart. 🛍️ Ready to place your order, or would you like to keep"
+2026-03-29 17:34:20 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:34:39 | INFO     | server | [WS] User message: 'order now'
+2026-03-29 17:34:41 | DEBUG    | server | [WS] Sending event type=status
+2026-03-29 17:34:43 | INFO     | agents.cart_agent | [CartAgent] Calling tool=place_order  args={}
+2026-03-29 17:34:43 | INFO     | agents.cart_agent | [Cart] place_order called
+2026-03-29 17:34:43 | INFO     | agents.cart_agent | [Cart] place_order success: {'success': True, 'placed': ['0194'], 'count': 1}
+2026-03-29 17:34:43 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"success": true, "placed": ["0194"], "count": 1}
+2026-03-29 17:34:44 | INFO     | agents.cart_agent | [CartAgent] Final reply (53 chars): "Your order is placed! 🎉 You're going to look amazing."
+2026-03-29 17:34:46 | DEBUG    | server | [WS] Sending event type=message
+2026-03-29 17:35:24 | INFO     | server | [WS] Session closed — client=127.0.0.1:44612
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | INFO     | server | [WS] New session opened — client=127.0.0.1:54718
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:25 | INFO     | server | [WS] New session opened — client=127.0.0.1:54732
+2026-03-29 17:35:25 | INFO     | server | [WS] Session closed — client=127.0.0.1:54718
+2026-03-29 17:35:36 | INFO     | server | [WS] Session closed — client=127.0.0.1:54732
+2026-03-29 17:35:37 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:37 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:37 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:38 | INFO     | server | [WS] New session opened — client=127.0.0.1:54228
+2026-03-29 17:35:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:38 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:35:38 | INFO     | server | [WS] New session opened — client=127.0.0.1:54234
+2026-03-29 17:35:38 | INFO     | server | [WS] Session closed — client=127.0.0.1:54228
+2026-03-29 17:41:39 | INFO     | server | [WS] Session closed — client=127.0.0.1:54234
+2026-03-29 17:41:39 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | INFO     | server | [WS] New session opened — client=127.0.0.1:54668
+2026-03-29 17:41:40 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-03-29 17:41:40 | INFO     | server | [WS] New session opened — client=127.0.0.1:54680
+2026-03-29 17:41:40 | INFO     | server | [WS] Session closed — client=127.0.0.1:54668
+2026-03-29 17:48:54 | INFO     | server | [WS] Session closed — client=127.0.0.1:54680
