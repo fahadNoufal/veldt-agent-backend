@@ -1,0 +1,55 @@
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+build/
+dist/
+
+# ── Environment & Secrets ─────────────────────────────────────
+# Never commit your API keys (Google, Azure, etc.)
+.env
+.env.*
+!.env.example
+
+# ── AI/ML Artifacts ───────────────────────────────────────────
+# Ignore raw datasets or massive model weights
+# (Keep your processed .db and .faiss if you want them baked into Git,
+# otherwise add them here)
+raw_data/
+model_cache/
+.cache/
+*.log
+
+# ── Database & RAG Caches ─────────────────────────────────────
+# If you want to keep the production DB out of git:
+# data/*.db
+# *.faiss
+# *.pkl
+
+# ── Node / Frontend (React) ───────────────────────────────────
+node_modules/
+.next/
+out/
+.vercel
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Editor & OS ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Testing & Coverage ────────────────────────────────────────
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/

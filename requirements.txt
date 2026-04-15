@@ -21,7 +21,7 @@ sentence-transformers
 
 # CLIP / Vision
 # torch>=2.0.0
-transformers
+transformers==4.44.2
 Pillow
 
 # ML Utilities

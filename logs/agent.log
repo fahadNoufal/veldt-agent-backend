@@ -16527,3 +16527,38 @@
 2026-04-14 18:55:17 | INFO     | server | [WS] New session — client=127.0.0.1:37018
 2026-04-14 18:55:17 | INFO     | server | [WS] Session closed — client=127.0.0.1:37006
 2026-04-14 18:55:48 | INFO     | server | [WS] Session closed — client=127.0.0.1:37018
+2026-04-15 00:57:04 | INFO     | datasets | PyTorch version 2.8.0 available.
+2026-04-15 00:57:07 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:07 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:08 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:08 | INFO     | server | [WS] New session — client=127.0.0.1:35390
+2026-04-15 00:57:12 | INFO     | server | [WS] Session closed — client=127.0.0.1:35390
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | INFO     | server | [WS] New session — client=127.0.0.1:35400
+2026-04-15 00:57:13 | INFO     | server | [WS] Session closed — client=127.0.0.1:35400
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | WARNING  | google_genai._api_client | Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+2026-04-15 00:57:13 | INFO     | server | [WS] New session — client=127.0.0.1:35430
+2026-04-15 00:57:23 | INFO     | server | [WS] message='i need a black dress for my brothers wedding part at night, it should be simple and lose fit'
+2026-04-15 00:57:25 | DEBUG    | server | [WS] event type=status
+2026-04-15 00:57:25 | INFO     | agents.stylist_agent | [Stylist] chat called — history_turns=0  message='i need a black dress for my brothers wedding part at night, it should be simple and lose fit'
+2026-04-15 00:57:25 | INFO     | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-15 00:57:29 | DEBUG    | agents.stylist_agent | [Stylist] raw LLM response: {
+  "type": "suggestion",
+  "suggestion": "A flowing A-line maxi dress in a matte crepe fabric, featuring delicate spaghetti straps and a subtle empire waist, would be an elegant and comfortable choic
+2026-04-15 00:57:29 | INFO     | agents.stylist_agent | [Stylist] parsed response type=suggestion
+2026-04-15 00:57:32 | DEBUG    | server | [WS] event type=status
+2026-04-15 00:57:36 | DEBUG    | server | [WS] event type=products
+2026-04-15 00:57:38 | DEBUG    | server | [WS] event type=message
+2026-04-15 00:57:41 | INFO     | server | [WS] message='Add the 3rd item to my cart'
+2026-04-15 00:57:42 | DEBUG    | server | [WS] event type=status
+2026-04-15 00:57:43 | INFO     | agents.cart_agent | [CartAgent] Calling tool=add_to_cart  args={'product_id': '0425'}
+2026-04-15 00:57:43 | INFO     | agents.cart_agent | [Cart] add_to_cart product_id=0425
+2026-04-15 00:57:43 | DEBUG    | agents.cart_agent | [Cart] add_to_cart success: {'message': 'Added to cart', 'cart_id': 3, 'quantity': 1}
+2026-04-15 00:57:43 | DEBUG    | agents.cart_agent | [CartAgent] Tool result: {"message": "Added to cart", "cart_id": 3, "quantity": 1}
+2026-04-15 00:57:45 | INFO     | agents.cart_agent | [CartAgent] Final reply (0 chars): ''
+2026-04-15 00:57:47 | DEBUG    | server | [WS] event type=message
+2026-04-15 00:58:05 | INFO     | server | [WS] Session closed — client=127.0.0.1:35430

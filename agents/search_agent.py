@@ -85,6 +85,8 @@ class SearchAgent:
         ).to(self.device)
         with torch.no_grad():
             feat = self.model.get_text_features(**inputs)
+        if hasattr(feat, "pooler_output"):
+            feat = feat.pooler_output
         feat = feat / feat.norm(p=2, dim=-1, keepdim=True)
         qv   = feat.cpu().numpy().astype("float32")
 
